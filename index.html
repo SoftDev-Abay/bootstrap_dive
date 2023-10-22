@@ -24,7 +24,9 @@
     <title>Lion Heart</title>
   </head>
   <body>
-    <nav class="py-3 sticky-top navbar navbar-expand-lg bg-dark navbar-dark">
+
+
+    <nav class="py-3 fixed-top navbar navbar-expand-lg bg-transparent navbar-light">
       <div class="container">
         <a href="#" class="navbar-brand"
           ><span class="text-warning">Lion</span> Heart</a
@@ -53,68 +55,22 @@
               <a href="#product" class="nav-link"> Product </a>
             </li>
           </ul>
+          <div class="mx-0 mx-lg-5" id="openCart-icon" onclick="openCart()">
+              <i class="text-warning h5 bi bi-cart-dash"></i>
+          </div>
+
+
         </div>
       </div>
     </nav>
 
-    <div
-      class="modal fade"
-      id="enroll"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p class="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              asperiores, perspiciatis est labore architecto eveniet.
-            </p>
-            <form action="#">
-              <input type="text" class="form-control mb-3" placeholder="Name" />
-              <input
-                type="text"
-                class="form-control mb-3"
-                placeholder="Email"
-              />
-              <input
-                type="text"
-                class="form-control mb-3"
-                placeholder="Phone"
-              />
-              <input
-                type="text"
-                class="form-control mb-3"
-                placeholder="Password"
-              />
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    
+
+    
 
     <section
-      class="bg-dark text-light p-5 pt-lg-3 p-lg-0 text-center text-sm-start"
+      class=" text-light d-flex justify-content-center align-items-center  p-5 pt-lg-3 p-lg-0 text-center text-sm-start" style="background-size: cover; background-image: url(img/hero.jpg); height: 100vh;"
     >
       <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between">
@@ -125,423 +81,396 @@
               and the best price.
             </p>
             <button
-              class="btn btn-primary btn-lg"
-              data-bs-toggle="modal"
-              data-bs-target="#enroll"
+              class="btn btn-danger btn-lg"
             >
               Start your journey
             </button>
           </div>
-          <img
-            class="d-sm-block d-none img-fluid w-50"
-            src="img/hero.svg"
-            alt=""
-            style="transform: scaleX(-1)"
-          />
         </div>
       </div>
     </section>
 
-    <section class="bg-primary text-light p-5">
+
+    <div class="alert alert-warning mb-0 text-center" role="alert">
+      Sale ends in <span id="timer" class="fw-bold"> 2 days </span>! Don't miss out!
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-6 left d-flex align-items-stretch" style="background-color: #03503c;">
+              <div class="text-container d-flex flex-column justify-content-center px-3">
+                  <h3 class="text-white">  Lorem ipsum dolor</h3>
+                  <p class="text-white-50"> Sit amet, consectetur adipiscing elit. Aenean vel tellus id neque consectetur mattis nec ac tellus.</p>
+                  <button class="btn btn-primary">Buy Now</button>
+              </div>
+              <img src="img/left.png" alt="" class="img-fluid h-100 w-50">
+          </div>
+          <div class="py-5 py-md-0 col-md-6 right d-flex align-items-stretch" style="background-color: #d0d0d0;">
+              <img src="img/lovepik-sports-mens-running-movements-png-image_400285400_wh1200-removebg-preview.png" alt="" class="img-fluid h-100 w-50">
+              <div class="text-container d-flex flex-column justify-content-center px-3">
+                  <h3> Lorem ipsum dolor</h3>
+                  <p> Sit amet, consectetur adipiscing elit. Aenean vel tellus id neque consectetur mattis nec ac tellus.</p>
+                  <button class="btn btn-primary">Buy Now</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+    <div id="cart-container" class="shopping-cart-container bg-light d-none">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center h-100 py-5">
+            <div class="col-10">
+      
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+                <button type="button" class="close" onclick="closeCart()" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div id="cart-content-items">
+
+              </div>
+              
+              <div class="card">
+                  <button type="button" class="btn btn-warning">Proceed to Pay</button>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <section class="py-5">
       <div class="container">
-        <div class="d-md-flex align-items-center justify-content-between">
-          <h3 class="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
-          <div class="input-group news-input">
-            <input
-              type="email"
-              class="form-control"
-              placeholder="Enter Email"
-            />
-            <button type="submit" class="btn btn-dark btn-lg">Send</button>
-          </div>
+        <div class="row">
+    <div class="col-6 col-md-3">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="img/product (1).png" class="card-img-top" alt="Jacket">
+            <div class="card-body">
+                <h5 class="card-title">Jacket</h5>
+                <p class="card-text">Stay cozy and stylish in our trendy Jacket. Whether you're braving the cold or making a fashion statement, this jacket is the perfect choice. Crafted for comfort and designed for flair, it's a must-have in your wardrobe.</p>
+                <a class="btn btn-primary" onclick="addToCart(1)">Add to Cart</a>
+            </div>
         </div>
+    </div>
+
+    
+  
+    <div class="col-6 col-md-3">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="img/product (2).png" class="card-img-top" alt="Socks">
+            <div class="card-body">
+                <h5 class="card-title">Socks</h5>
+                <p class="card-text">Step into the world of comfort with our premium Socks. Soft, snug, and durable, these socks are a treat for your feet. Perfect for long days or lazy evenings, they offer unmatched relaxation for your soles.</p>
+                <a class="btn btn-primary" onclick="addToCart(2)">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="img/product (3).png" class="card-img-top" alt="Trousers">
+            <div class="card-body">
+                <h5 class="card-title">Trousers</h5>
+                <p class="card-text">Elevate your style with our classic Trousers. Tailored to perfection, these trousers are the epitome of sophistication. Whether you're heading to the office or a special event, these trousers ensure you look sharp and elegant.</p>
+                <a class="btn btn-primary" onclick="addToCart(3)">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="col-6 col-md-3">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="img/product (4).png" class="card-img-top" alt="Skirt">
+            <div class="card-body">
+                <h5 class="card-title">Skirt</h5>
+                <p class="card-text">Embrace grace with our versatile Skirt. Effortlessly chic, this skirt adds a touch of sophistication to any outfit. Whether you're twirling on the dance floor or attending a formal dinner, this skirt makes a statement.</p>
+                <a onclick="addToCart(4)" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="col-6 col-md-3">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="img/product (5).png" class="card-img-top" alt="Boots">
+            <div class="card-body">
+                <h5 class="card-title">Boots</h5>
+                <p class="card-text">Make a bold statement with our chic Boots. Designed for the fashion-forward, these boots exude confidence and style. From city streets to glamorous events, these boots are your ticket to turning heads.</p>
+                <a onclick="addToCart(5)" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="img/product (6).png" class="card-img-top" alt="Bandana">
+            <div class="card-body">
+                <h5 class="card-title">Bandana</h5>
+                <p class="card-text">Accessorize with flair using our stylish Bandana. Versatile and vibrant, this bandana adds a pop of color to your ensemble. Whether worn around your neck, head, or wrist, it's the perfect accessory for trendsetters.</p>
+                <a onclick="addToCart(6)" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-6 col-md-3">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="img/product (7).png" class="card-img-top" alt="Cap">
+            <div class="card-body">
+                <h5 class="card-title">Cap</h5>
+                <p class="card-text">Stay shaded in style with our comfortable Cap. Effortlessly cool, this cap offers both sun protection and a fashion statement. Adjustable and breathable, it's the ideal companion for outdoor adventures.</p>
+                <a onclick="addToCart(7)" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="img/product (8).png" class="card-img-top" alt="Hat">
+            <div class="card-body">
+                <h5 class="card-title">Hat</h5>
+                <p class="card-text">Elevate your look with our fashionable Hat. Designed for the discerning individual, this hat combines sophistication with a touch of mystery. Top off your outfits with this hat and make a lasting impression.</p>
+                <a onclick="addToCart(8)" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+</div>
       </div>
+
     </section>
 
-    <section class="p-5">
+    <section class="services bg-danger py-3">
       <div class="container">
-        <div class="row text-center g-4">
-          <div class="col-md">
-            <div class="card bg-dark text-light">
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-laptop"></i>
-                </div>
-                <h3 class="card-title mb-3">Computer</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam, voluptatum.
-                </p>
-                <a href="" class="btn btn-primary"> Read More </a>
+          <div class="row justify-content-evenly">
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                  <div class="services-item d-flex align-items-center justify-content-around text-white">
+                      <i class="bi bi-truck h2"></i>
+                      <div class="text-container mx-2">
+                          <p class="title mb-1 h6">FREE DELIVERY</p>
+                          <p class="desc mb-0">When ordering from $500.</p>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="card bg-secondary text-light">
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-phone"></i>
-                </div>
-                <h3 class="card-title mb-3">Mobile</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam, voluptatum.
-                </p>
-                <a href="" class="btn btn-dark"> Read More </a>
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                  <div class="services-item d-flex align-items-center justify-content-around text-white">
+                      <i class="bi bi-cash h2"></i>
+                      <div class="text-container mx-2">
+                          <p class="title mb-1 h6">100% REFUND OF MONEY</p>
+                          <p class="desc mb-0">14-days of complaint.</p>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="card bg-dark text-light">
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-shop"></i>
-                </div>
-                <h3 class="card-title mb-3">In Store</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam, voluptatum.
-                </p>
-                <a href="" class="btn btn-primary"> Read More </a>
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-md-0">
+                  <div class="services-item d-flex align-items-center justify-content-around text-white">
+                      <i class="bi bi-emoji-smile h2"></i>
+                      <div class="text-container mx-2">
+                          <p class="title mb-1 h6">HAPPY CLIENTS</p>
+                          <p class="desc mb-0">10,000 products every year.</p>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
-    </section>
-
+  </section>
+  
+  
     <section class="p-5" id="about">
       <div class="container">
         <div class="row align-items-center justify-content-between">
           <div class="col-md">
-            <img src="img/global.jpg" class="img-fluid" alt="" />
+            <img src="img/dmcx0qed-removebg-preview.png" class="img-fluid" alt="" />
           </div>
           <div class="col-md p-5">
-            <h2>Work globaly</h2>
+            <h2>Subscribe Us And Get 25% Off For All Products</h2>
             <p class="lead">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
               animi sunt cumque qui debitis hic.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique qui eos, soluta fugiat natus facere!
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              reprehenderit voluptatum mollitia quod, cum delectus at. Quae
-              sapiente voluptates beatae, sequi sunt voluptatem minus placeat
-              excepturi. Alias delectus esse iste.
-            </p>
-            <a href="#" class="btn btn-light mt-3">
-              <i class="bi bi-chevron-right"></i> Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="p-5 bg-dark text-light" id="about">
-      <div class="container">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-md p-5">
-            <h2>Flash delivery</h2>
-            <p class="lead">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
-              animi sunt cumque qui debitis hic.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              reprehenderit voluptatum mollitia quod, cum delectus at. Quae
-              sapiente voluptates beatae, sequi sunt voluptatem minus placeat
-              excepturi. Alias delectus esse iste.
-            </p>
-            <a href="#" class="btn btn-light mt-3">
-              <i class="bi bi-chevron-right"></i> Read More
-            </a>
-          </div>
-          <div class="col-md">
-            <img src="img/fast-delivery.webp" class="img-fluid" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="questions" class="p-5">
-      <div class="container">
-        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
-        <div class="accordion accordion-flush" id="questions">
-          <!--  -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-1"
-              >
-                Where exactly are you located?
-              </button>
-            </h2>
-            <div id="question-1" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem,
-                earum? Commodi, delectus esse dolorum beatae sunt libero quos ab
-                qui, facilis nesciunt, fugiat quidem totam. Consequuntur culpa
-                exercitationem corporis labore possimus eos dolorum rerum
-                repellendus recusandae et, laudantium neque perspiciatis magni,
-                sit nobis accusamus vero nihil commodi. Vel, id aliquid.
-              </div>
-            </div>
-          </div>
-          <!--  -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-2"
-              >
-                What are you doing?
-              </button>
-            </h2>
-            <div
-              id="question-2"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro
-                modi corporis deserunt eum accusamus repudiandae et quis
-                aperiam. Explicabo sequi inventore odio dolores omnis ratione
-                incidunt, modi aliquam eum. Quod dignissimos laborum error
-                molestiae, vel animi. Id sit tempora perspiciatis, eveniet fuga
-                quam non illum nisi. Officia corrupti veritatis excepturi?
-              </div>
-            </div>
-          </div>
-          <!--  -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-3"
-              >
-                How are prices placed?
-              </button>
-            </h2>
-            <div
-              id="question-3"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                dolorum incidunt eius animi modi at facilis voluptatem soluta.
-                Maiores optio perspiciatis sapiente ipsa tempore commodi amet,
-                reiciendis tempora soluta esse animi iusto illo dicta inventore
-                ducimus nesciunt. Facere quibusdam ea neque ipsum aspernatur
-                nihil. Numquam ab consectetur optio asperiores delectus!
-              </div>
-            </div>
-          </div>
-          <!--  -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-4"
-              >
-                What I need to know?
-              </button>
-            </h2>
-            <div
-              id="question-4"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                dolorum incidunt eius animi modi at facilis voluptatem soluta.
-                Maiores optio perspiciatis sapiente ipsa tempore commodi amet,
-                reiciendis tempora soluta esse animi iusto illo dicta inventore
-                ducimus nesciunt. Facere quibusdam ea neque ipsum aspernatur
-                nihil. Numquam ab consectetur optio asperiores delectus!
-              </div>
-            </div>
-          </div>
-          <!--  -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-5"
-              >
-                How do I sign up?
-              </button>
-            </h2>
-            <div
-              id="question-5"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                dolorum incidunt eius animi modi at facilis voluptatem soluta.
-                Maiores optio perspiciatis sapiente ipsa tempore commodi amet,
-                reiciendis tempora soluta esse animi iusto illo dicta inventore
-                ducimus nesciunt. Facere quibusdam ea neque ipsum aspernatur
-                nihil. Numquam ab consectetur optio asperiores delectus!
-              </div>
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter Email"
+              />
+              <button type="submit" class="btn bg-danger btn-lg">Send</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="designers" class="p-5 bg-primary">
-      <div class="container">
-        <h2 class="text-center text-white">Our Designers</h2>
-        <p class="lead text-center text-white mb-5">
-          Our designers all have 10+ years working as a professional designers
-          in the industry.
-        </p>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="https://randomuser.me/api/portraits/men/11.jpg"
-                  class="rounded-circle mb-3"
-                  alt=""
-                />
-                <h3 class="card-title mb-3">John Doe</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
-                  amet? Quia aperiam hic nam esse.
-                </p>
-                <a href="#">
-                  <i class="bi bi-twitter text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-linkedin text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-instagram text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-facebook text-dark mx-1"></i>
-                </a>
+    <div class="container my-5">
+      <div class="row justify-content-center">
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-header">
+                      Signup Form
+                  </div>
+                  <div class="card-body">
+                      <form id="signupForm">
+                          <div class="form-group">
+                              <label for="name">Name:</label>
+                              <input type="text" required class="form-control" id="name" placeholder="Enter your name">
+                          </div>
+                          <div class="form-group mt-3">
+                              <label for="email">Email:</label>
+                              <input type="email" required class="form-control" id="email" placeholder="Enter your email">
+                          </div>
+                          <div class="form-group mt-3">
+                              <label for="password">Password:</label>
+                              <input type="password" required class="form-control" id="password" placeholder="Enter your password">
+                          </div>
+                          <div class="form-group mt-3">
+                            <label for="password">Confirm password:</label>
+                            <input type="password" required class="form-control" id="confirmPassword" placeholder="Enter your password again">
+                        </div>
+                          <button type="submit" class="mt-3 btn btn-primary">Signup</button>
+                      </form>
+ 
+                  </div>
               </div>
-            </div>
           </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="https://randomuser.me/api/portraits/women/11.jpg"
-                  class="rounded-circle mb-3"
-                  alt=""
-                />
-                <h3 class="card-title mb-3">Jane Doe</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
-                  amet? Quia aperiam hic nam esse.
-                </p>
-                <a href="#">
-                  <i class="bi bi-twitter text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-linkedin text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-instagram text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-facebook text-dark mx-1"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="https://randomuser.me/api/portraits/men/12.jpg"
-                  class="rounded-circle mb-3"
-                  alt=""
-                />
-                <h3 class="card-title mb-3">Steve Smith</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
-                  amet? Quia aperiam hic nam esse.
-                </p>
-                <a href="#">
-                  <i class="bi bi-twitter text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-linkedin text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-instagram text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-facebook text-dark mx-1"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="https://randomuser.me/api/portraits/women/12.jpg"
-                  class="rounded-circle mb-3"
-                  alt=""
-                />
-                <h3 class="card-title mb-3">Andy Smith</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
-                  amet? Quia aperiam hic nam esse.
-                </p>
-                <a href="#">
-                  <i class="bi bi-twitter text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-linkedin text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-instagram text-dark mx-1"></i>
-                </a>
-                <a href="#">
-                  <i class="bi bi-facebook text-dark mx-1"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
+  </div>
+
+
+<section class="clients bg-danger text-white py-5">
+    <div class="container">
+        <h1 class="text-center mb-5">Our Happy Clients</h1>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="card bg-light text-dark h-100">
+                    <div class="card-body">
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                        
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="" class="rounded-circle me-3" width="50">
+                            <div>
+                                <h5 class="mb-1">Sabira Bulatpecova</h5>
+                                <p class="text-black-50">@sabira_bulatpekova</p>
+                            </div>
+                        </div>
+                        <div class="stars-icons">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                      </div>
+                        <div class="mt-3">
+                          Absolutely in love with my new wardrobe from Lion Heart! The variety of stylish outfits and the quality of fabrics are remarkable. The team here has a keen eye for fashion, and their customer service is exceptional. I feel confident and trendy in every purchase. Highly recommended!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-light text-dark h-100">
+                    <div class="card-body">
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                        
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="" class="rounded-circle me-3" width="50">
+                            <div>
+                                <h5 class="mb-1">Damir Aliev</h5>
+                                <p class="text-black-50">@damir_aliev</p>
+                            </div>
+                        </div>
+                        <div class="stars-icons">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                      </div>
+                        <div class="mt-3">
+                          Shopping at Lion Heart was a delightful experience. The collection is on-trend and diverse, catering to various tastes. The staff's friendly approach and helpful suggestions made my shopping spree enjoyable. The clothes are not just fashionable but also comfortable. I found my new favorite store!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-light text-dark h-100">
+                    <div class="card-body">
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                        
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/13.jpg" alt="" class="rounded-circle me-3" width="50">
+                            <div>
+                                <h5 class="mb-1">Nurzhau Azenba</h5>
+                                <p class="text-black-50">@nurzhau_azenba</p>
+                            </div>
+                        </div>
+                        <div class="stars-icons">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                      </div>
+                        <div class="mt-3">
+                          I can't express how impressed I am with [Your Clothing Store Name]. The attention to detail in their clothing designs is exquisite. Each piece I bought reflects the latest fashion trends and fits perfectly. The store ambiance is welcoming, and the staff members are knowledgeable and friendly. I'm a loyal customer now!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-light text-dark h-100">
+                    <div class="card-body">
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                        
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="" class="rounded-circle me-3" width="50">
+                            <div>
+                                <h5 class="mb-1">Abay Aliev</h5>
+                                <p class="text-black-50">@abay_aliev</p>
+                            </div>
+                        </div>
+                        <div class="stars-icons">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                      </div>
+                        <div class="mt-3">
+                          Lion Heart is my go-to fashion destination. The curated selection of clothing and accessories is chic and affordable. The store layout is visually appealing, making the shopping experience enjoyable. The quality of the garments is top-notch, and I always receive compliments when I wear outfits from here. Exceptional fashion, exceptional store!
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
     <section class="p-5 bg-dark" id="product">
       <div class="d-flex align-items-center justify-content-center">
 
         <div class="container bg-white rounded-3 p-2 row">
-          <!-- <img class="w-50 h-25 rounded-3" src="/img/product3.webp" alt=""> -->
           <div
             id="carouselExample"
             class="carousel slide col-12 col-lg-7 p-0"
-            data-bs-ride="true"
+            data-carousel-my
           >
-            <div class="carousel-inner rounded-3 " style="max-height: 800px ">
-              <div class="carousel-item active ">
+            <div class="carousel-inner rounded-3 " style="max-height: 800px " data-slides-my>
+              <div class="carousel-item active">
                 <img
                   src="/img/product1.png"
                   class="d-block img-fluid"
                   alt="..."
                 />
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item ">
                 <img
                   src="/img/product2.png"
                   class="d-block img-fluid"
@@ -559,8 +488,7 @@
             <button
               class="carousel-control-prev"
               type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="prev"
+              data-carousel-my-button = "prev"
             >
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -568,10 +496,9 @@
             <button
               class="carousel-control-next"
               type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
+              data-carousel-my-button = "next"
             >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="carousel-control-next-icon bg-danger" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
@@ -609,53 +536,49 @@
       </div>
     </section>
 
-    <section class="p-5">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-md">
-            <h2 class="text-center mb-4">Contact Info</h2>
-
-            <ul class="list-group list-group-flush lead">
-              <li class="list-group-item">
-                <span class="fw-bold">Main Location:</span> 50 Main st, Boston
-              </li>
-              <li class="list-group-item">
-                <span class="fw-bold"> Home phone: </span>
-                (555) 555-5555
-              </li>
-              <li class="list-group-item">
-                <span class="fw-bold"> Mobile Phone: </span>
-                (333) 333-3333
-              </li>
-              <li class="list-group-item">
-                <span class="fw-bold"> Email: </span>
-                random010@gmail.com
-              </li>
-              <li class="list-group-item">
-                <span class="fw-bold"> Working Hours: </span>
-                Monday - Friday 9:00am - 5:00pm
-              </li>
-            </ul>
-          </div>
-          <iframe
-            id="inlineFrameExample"
-            title="Inline Frame Example"
-            class="rounded-3 col-md"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
-          >
-          </iframe>
+    <footer class="bg-dark text-white py-4 ">
+    <div class="container mt-5 px-5 px-lg-0">
+        <div class="d-flex flex-column flex-md-row justify-content-evenly ">
+            <div class="mb-4">
+                <h3 class="font-weight-bold mb-4">Connect with us</h3>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Email address" aria-label="Email address" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-danger" type="button">Sign Up</button>
+                    </div>
+                </div>
+                <h5 class="font-weight-bold mb-3">FOLLOW US</h5>
+                <div class="social-media">
+                    <i class="bi bi-facebook h5"></i>
+                    <i class="bi bi-instagram h5"></i>
+                    <i class="bi bi-twitter h5"></i>
+                </div>
+            </div>
+            <div class="mb-4">
+                <h3 class="font-weight-bold mb-4">Quick Links</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="">> </i> Home</li>
+                    <li class="mb-2"><i class="">> </i> About</li>
+                    <li class="mb-2"><i class="">> </i> Products</li>
+                    <li><i class="">> </i> Contact Us</li>
+                </ul>
+            </div>
+            <div class="">
+                <h3 class="font-weight-bold mb-4">Contact Us</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-telephone mr-2 h5"></i> +7 700 542 1237</li>
+                    <li class="mb-2"><i class="bi bi-envelope mr-2 h5"></i> info@lionheart.com</li>
+                    <li><i class="bi bi-geo-alt mr-2 h5"></i> Expo Plaza 25</li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+    <hr class="my-4">
+    <p class="text-center h6">© 2023 Lion Heart. All rights reserved.</p>
+</footer>
 
-    <footer class="p-5 bg-dark text-center text-white position-relative">
-      <div class="container">
-        <p class="lead">Copyright &copy; 2023 Lion Heart</p>
-        <a href="#" class="position-absolute bottom-0 end-0 p-5">
-          <i class="bi bi-arrow-up-circle h1"></i>
-        </a>
-      </div>
-    </footer>
+<script src="script.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -663,3 +586,5 @@
     ></script>
   </body>
 </html>
+
+

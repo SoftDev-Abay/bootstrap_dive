@@ -1,6 +1,15 @@
 @media(min-width: 768px) {
   .news-input {
-    width: 50% !important; 
+    width: 70% !important; 
   }
 }
 
+.shopping-cart-container{
+  position: fixed;
+  overflow: auto;
+  width: 50%;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 9909;
+}

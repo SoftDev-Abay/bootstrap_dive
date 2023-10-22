@@ -1,0 +1,58 @@
+export const products = [
+    {
+        id: 1,
+        name: "Jacket",
+        img: "https://example.com/product1.jpg",
+        desc: "Stay cozy and stylish in our trendy Jacket. Whether you're braving the cold or making a fashion statement, this jacket is the perfect choice. Crafted for comfort and designed for flair, it's a must-have in your wardrobe.",
+        price: 9.99,
+    },
+    {
+        id: 2,
+        name: "Socks",
+        img: "https://example.com/product2.jpg",
+        desc: "Step into the world of comfort with our premium Socks. Soft, snug, and durable, these socks are a treat for your feet. Perfect for long days or lazy evenings, they offer unmatched relaxation for your soles.",
+        price: 19.99,
+    },
+    {
+        id: 3,
+        name: "Trousers",
+        img: "https://example.com/product3.jpg",
+        desc: "Elevate your style with our classic Trousers. Tailored to perfection, these trousers are the epitome of sophistication. Whether you're heading to the office or a special event, these trousers ensure you look sharp and elegant.",
+        price: 29.99,
+    },
+    {
+        id: 4,
+        name: "Skirt",
+        img: "https://example.com/product4.jpg",
+        desc: "Embrace grace with our versatile Skirt. Effortlessly chic, this skirt adds a touch of sophistication to any outfit. Whether you're twirling on the dance floor or attending a formal dinner, this skirt makes a statement.",
+        price: 39.99,
+    },
+    {
+        id: 5,
+        name: "Boots",
+        img: "https://example.com/product5.jpg",
+        desc: "Make a bold statement with our chic Boots. Designed for the fashion-forward, these boots exude confidence and style. From city streets to glamorous events, these boots are your ticket to turning heads.",
+        price: 49.99,
+    },
+    {
+        id: 6,
+        name: "Bandana",
+        img: "https://example.com/product6.jpg",
+        desc: "Accessorize with flair using our stylish Bandana. Versatile and vibrant, this bandana adds a pop of color to your ensemble. Whether worn around your neck, head, or wrist, it's the perfect accessory for trendsetters.",
+        price: 59.99,
+    },
+    {
+        id: 7,
+        name: "Cap",
+        img: "https://example.com/product7.jpg",
+        desc: "Stay shaded in style with our comfortable Cap. Effortlessly cool, this cap offers both sun protection and a fashion statement. Adjustable and breathable, it's the ideal companion for outdoor adventures.",
+        price: 69.99,
+    },
+    {
+        id: 8,
+        name: "Hat",
+        img: "https://example.com/product8.jpg",
+        desc: "Elevate your look with our fashionable Hat. Designed for the discerning individual, this hat combines sophistication with a touch of mystery. Top off your outfits with this hat and make a lasting impression.",
+        price: 79.99,
+    },
+];
